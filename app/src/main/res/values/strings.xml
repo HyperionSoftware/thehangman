@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">The Hangman</string>
+    <string name="LettersSelected">Letters already selected:</string>
+    <string name="WordToDiscover">Word to discover:</string>
+    <string name="newLetter">New letter</string>
+</resources>
