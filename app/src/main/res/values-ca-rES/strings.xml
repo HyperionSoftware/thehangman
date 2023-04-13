@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">El penjat</string>
+    <string name="LettersSelected">lletres ja seleccionades:</string>
+    <string name="WordToDiscover">Lletra a descobrir:</string>
+    <string name="newLetter">Nova lletra</string>
+    <string name="notValidBecauseSize">Lletra no introduida</string>
+    <string name="notValidBecauseAlreadyChoosen">Lletra ja introduida</string>
+    <string name="startGame">Inicia joc</string>
+    <string name="username">Nom usuari</string>
+</resources>
