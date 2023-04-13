@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -80,6 +81,12 @@ public class MainActivity extends AppCompatActivity {
         int validLetter = game.addLetter(novaLletra);
         if (validLetter != Game.LETTER_VALIDATION_OK){
             Log.d(Game.TAG, "Lletra no vàlida");
+            if (validLetter == Game.LETTER_VALIDATION_NO_VALID_BECAUSE_ALREADY_SELECTED){
+                Toast.makeText(this, R.string.notValidBecauseAlreadyChoosen, Toast.LENGTH_SHORT ).show();
+            }
+            if (validLetter == Game.LETTER_VALIDATION_NO_VALID_BECAUSE_SIZE){
+                Toast.makeText(this, R.string.notValidBecauseSize, Toast.LENGTH_SHORT ).show();
+            }
         }
         Log.d(Game.TAG, "Estat actual: " + game.getCurrentRound());
 

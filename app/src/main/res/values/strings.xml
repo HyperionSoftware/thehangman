@@ -3,4 +3,6 @@
     <string name="LettersSelected">Letters already selected:</string>
     <string name="WordToDiscover">Word to discover:</string>
     <string name="newLetter">New letter</string>
+    <string name="notValidBecauseSize">No letter entered</string>
+    <string name="notValidBecauseAlreadyChoosen">Letter already used</string>
 </resources>
