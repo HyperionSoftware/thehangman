@@ -1,4 +1,4 @@
-package cat.udl.gtidic.course2223.teacher.thehangman;
+package cat.udl.gtidic.course2223.teacher.thehangman.models;
 
 import android.util.Log;
 
@@ -60,8 +60,7 @@ public class Game {
             playerWon = false;
             return true;
         }
-        if (isPlayerTheWinner()) return true;
-        return false;
+        return isPlayerTheWinner();
     }
 
     /**

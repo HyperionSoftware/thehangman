@@ -1,7 +1,9 @@
-package cat.udl.gtidic.course2223.teacher.thehangman;
+package cat.udl.gtidic.course2223.teacher.thehangman.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -15,14 +17,20 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import cat.udl.gtidic.course2223.teacher.thehangman.databinding.ActivityMainBinding;
+import cat.udl.gtidic.course2223.teacher.thehangman.models.Game;
+import cat.udl.gtidic.course2223.teacher.thehangman.R;
+import cat.udl.gtidic.course2223.teacher.thehangman.viewmodels.GameViewModel;
+
 public class MainActivity extends AppCompatActivity {
 
     Button btnNewLetter;
-    TextView visibleWord;
+//    TextView visibleWord;
     TextView lettersChosen;
     EditText etNewLetter;
     ImageView ivState;
-    Game game;
+//    Game game;
+    private GameViewModel gameViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,11 +40,17 @@ public class MainActivity extends AppCompatActivity {
         String userNameRebut = this.getIntent().getExtras().getString("key_username");
 
 //        here is a good place to implement MVVM if someone is interested
+        // Obtain the ViewModel component.
+        gameViewModel = new ViewModelProvider(this).get(GameViewModel.class);
+        ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        // Assign the component to a property in the binding class.
+        binding.setViewmodel(gameViewModel);
+        binding.setLifecycleOwner(this);
 
 //        initializing views
         btnNewLetter = findViewById(R.id.btnNewLetter);
         btnNewLetter.setOnClickListener(v -> newLetter());
-        visibleWord = findViewById(R.id.tvVisibleWord);
+//        visibleWord = findViewById(R.id.tvVisibleWord);
         lettersChosen = findViewById(R.id.tvLettersChosen);
         etNewLetter = findViewById(R.id.etNewLetter);
         ivState = findViewById(R.id.ivState);
@@ -70,9 +84,9 @@ public class MainActivity extends AppCompatActivity {
      * Actualitza les views de la pantalla
      */
     private void refreshWords(){
-        visibleWord.setText(game.visibleWord());
-        lettersChosen.setText(game.lettersChosen());
-        ivState.setImageDrawable(getDrawableFromState(game.getCurrentRound()));
+//        visibleWord.setText(gameViewModel.getGame().visibleWord());
+        lettersChosen.setText(gameViewModel.getGame().lettersChosen());
+        ivState.setImageDrawable(getDrawableFromState(gameViewModel.getGame().getCurrentRound()));
     }
 
     /**
@@ -82,7 +96,8 @@ public class MainActivity extends AppCompatActivity {
         String novaLletra = etNewLetter.getText().toString().toUpperCase();
         etNewLetter.setText("");
 
-        int validLetter = game.addLetter(novaLletra);
+//        int validLetter = gameViewModel.getGame().addLetter(novaLletra);
+        int validLetter = gameViewModel.addLetter(novaLletra);
         if (validLetter != Game.LETTER_VALIDATION_OK){
             Log.d(Game.TAG, "Lletra no vàlida");
             if (validLetter == Game.LETTER_VALIDATION_NO_VALID_BECAUSE_ALREADY_SELECTED){
@@ -92,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, R.string.notValidBecauseSize, Toast.LENGTH_SHORT ).show();
             }
         }
-        Log.d(Game.TAG, "Estat actual: " + game.getCurrentRound());
+        Log.d(Game.TAG, "Estat actual: " + gameViewModel.getGame().getCurrentRound());
 
         refreshWords();
         hideKeyboard();
@@ -103,11 +118,11 @@ public class MainActivity extends AppCompatActivity {
      * Revisa si el joc ha acabat i informa via Log (de moment)
      */
     private void checkGameOver(){
-        if (game.isPlayerTheWinner()){
+        if (gameViewModel.getGame().isPlayerTheWinner()){
             Log.d(Game.TAG, "El jugador ha guanyat!");
         }
 
-        if (game.isGameOver()){
+        if (gameViewModel.getGame().isGameOver()){
             Log.d(Game.TAG, "El Joc ha acabat");
             btnNewLetter.setEnabled(false);
             etNewLetter.setEnabled(false);
@@ -119,7 +134,8 @@ public class MainActivity extends AppCompatActivity {
      * Inicia el joc i actualitza l'activitat
      */
     private void startGame(){
-        game = new Game();
+//        game = new Game();
+        gameViewModel.startGame();
         refreshWords();
     }
 
