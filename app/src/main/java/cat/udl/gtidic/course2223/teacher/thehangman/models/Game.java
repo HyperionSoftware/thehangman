@@ -2,6 +2,8 @@ package cat.udl.gtidic.course2223.teacher.thehangman.models;
 
 import android.util.Log;
 
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -58,6 +60,7 @@ public class Game {
     public boolean isGameOver() {
         if (currentRound >= LAST_ROUND){
             playerWon = false;
+            persistData();
             return true;
         }
         return isPlayerTheWinner();
@@ -73,7 +76,23 @@ public class Game {
             if (!lettersChosen.contains(s)) return false;
         }
         playerWon = true;
+        persistData();
         return true;
+    }
+
+    /**
+     * Persistir dades a Firebase
+     */
+    private void persistData() {
+        String url = "https://dam-parcial1-6183a-default-rtdb.europe-west1.firebasedatabase.app/";
+        FirebaseDatabase database = FirebaseDatabase.getInstance(url);
+//        DatabaseReference myRef = database.getReference("message");
+//        myRef.setValue("Hello, World!");
+
+        database.getReference("secretWord").setValue(secretWord);
+        database.getReference("currentRound").setValue(currentRound);
+        database.getReference("playerWon").setValue(playerWon);
+        database.getReference("lettersChosenStr").setValue(lettersChosenStr);
     }
 
     /**
