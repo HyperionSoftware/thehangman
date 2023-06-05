@@ -7,4 +7,8 @@
     <string name="notValidBecauseAlreadyChosen">La letra ya ha sido escogida.</string>
     <string name="notValidBecauseSize">La letra no es válida por su tamaño.</string>
     <string name="startGame">Iniciar juego</string>
+    <string name="editTextUsername">Tu nombre</string>
+    <string name="notValidName">Nombre no válido.</string>
+    <string name="titleUsername">"Nombre de usuario: "</string>
+    <string name="defaultUsername">User</string>
 </resources>

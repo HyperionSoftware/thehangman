@@ -4,8 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.EditText;
+import android.widget.Toast;
 
 public class Init extends AppCompatActivity {
+
+    EditText userName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,7 +19,14 @@ public class Init extends AppCompatActivity {
     }
 
     private void startGame() {
+        userName = findViewById(R.id.editTextNomUsuari);
+        String nomUsuari = userName.getText().toString();
+        if(nomUsuari.trim().isEmpty()){
+            Toast.makeText(this, R.string.notValidName, Toast.LENGTH_SHORT).show();
+            return;
+        }
         Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra("key_username", nomUsuari);
         startActivity(intent);
     }
 }

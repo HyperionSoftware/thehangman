@@ -128,4 +128,25 @@
         android:autofillHints=""
         android:textAllCaps="true"/>
 
+    <TextView
+        android:id="@+id/titolNomUsuari"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="13dp"
+        android:text="@string/titleUsername"
+        app:layout_constraintBottom_toTopOf="@+id/tvVisibleWordText"
+        app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+        app:layout_constraintTop_toTopOf="@+id/guideline3" />
+
+    <TextView
+        android:id="@+id/txtUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="13dp"
+        android:text="@string/defaultUsername"
+        app:layout_constraintBottom_toTopOf="@+id/tvVisibleWordText"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineHalf"
+        app:layout_constraintStart_toEndOf="@+id/titolNomUsuari"
+        app:layout_constraintTop_toTopOf="@+id/guideline3" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

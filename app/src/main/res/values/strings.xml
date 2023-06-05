@@ -6,4 +6,8 @@
     <string name="notValidBecauseAlreadyChosen">The letter is already Chosen.</string>
     <string name="notValidBecauseSize">The letter is not valid because size.</string>
     <string name="startGame">Start Game</string>
+    <string name="editTextUsername">Your name</string>
+    <string name="notValidName">Name not valid.</string>
+    <string name="titleUsername">"User name: "</string>
+    <string name="defaultUsername">User</string>
 </resources>

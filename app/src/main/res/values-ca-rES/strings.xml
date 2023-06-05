@@ -7,4 +7,8 @@
     <string name="notValidBecauseAlreadyChosen">La lletra ja ha estat escollida.</string>
     <string name="notValidBecauseSize">La lletra no és vàlida pel seu tamany.</string>
     <string name="startGame">Iniciar joc</string>
+    <string name="editTextUsername">El teu nom</string>
+    <string name="notValidName">El nom no és vàlid.</string>
+    <string name="titleUsername">"Nom d'usuari: "</string>
+    <string name="defaultUsername">User</string>
 </resources>

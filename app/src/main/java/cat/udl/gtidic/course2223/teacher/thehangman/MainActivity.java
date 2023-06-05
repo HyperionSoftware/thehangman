@@ -29,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        String userNameRebut = this.getIntent().getExtras().getString("key_username");
+
+
 //        here is a good place to implement MVVM if someone is interested
 
 //        initializing views
@@ -38,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
         lettersChosen = findViewById(R.id.tvLettersChosen);
         etNewLetter = findViewById(R.id.etNewLetter);
         ivState = findViewById(R.id.ivState);
+
+        TextView userNameTv = findViewById(R.id.txtUsername);
+        userNameTv.setText(userNameRebut);
 
 //        starting game mechanics
         startGame();
