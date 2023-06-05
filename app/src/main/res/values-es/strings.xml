@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">The Hangman</string>
+    <string name="LettersSelected">Letras escogidas:</string>
+    <string name="WordToDiscover">Palabra a descubrir:</string>
+    <string name="newLetter">Nueva letra</string>
+    <string name="notValidBecauseAlreadyChosen">La letra ya ha sido escogida.</string>
+    <string name="notValidBecauseSize">La letra no es válida por su tamaño.</string>
+</resources>
