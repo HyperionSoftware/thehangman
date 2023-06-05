@@ -1,4 +1,4 @@
-package cat.udl.gtidic.course2223.teacher.thehangman;
+package cat.udl.gtidic.course2223.teacher.thehangman.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import cat.udl.gtidic.course2223.teacher.thehangman.R;
+import cat.udl.gtidic.course2223.teacher.thehangman.views.MainActivity;
 
 public class Init extends AppCompatActivity {
 
