@@ -107,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
             Log.d(Game.TAG, "El Joc ha acabat");
             btnNewLetter.setEnabled(false);
             etNewLetter.setEnabled(false);
+            finish(); // Anem a l'activity init() amb això.
         }
     }
 

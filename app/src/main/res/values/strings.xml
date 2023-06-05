@@ -5,4 +5,5 @@
     <string name="newLetter">New letter</string>
     <string name="notValidBecauseAlreadyChosen">The letter is already Chosen.</string>
     <string name="notValidBecauseSize">The letter is not valid because size.</string>
+    <string name="startGame">Start Game</string>
 </resources>

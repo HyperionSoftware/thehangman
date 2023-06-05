@@ -6,4 +6,5 @@
     <string name="newLetter">Nueva letra</string>
     <string name="notValidBecauseAlreadyChosen">La letra ya ha sido escogida.</string>
     <string name="notValidBecauseSize">La letra no es válida por su tamaño.</string>
+    <string name="startGame">Iniciar juego</string>
 </resources>
